@@ -17,4 +17,4 @@ target_include_directories(NenResourceManager PUBLIC
 )
 
 install(TARGETS NenResourceManager DESTINATION lib)
-install(DIRECTORY include/NenResourceManager DESTINATION include)
+install(DIRECTORY include/ResourceManager DESTINATION include)
