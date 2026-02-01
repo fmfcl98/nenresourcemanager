@@ -8,9 +8,10 @@ namespace nenresourcemanager
     std::shared_ptr<void> ResourceManager::LoadInternal(const std::string &path, std::type_index type)
     {
         auto cacheKey = path + type.name();
-        if (m_resourceCache.contains(cacheKey))
+        auto it = m_resourceCache.find(cacheKey);
+        if (it != m_resourceCache.end())
         {
-            return m_resourceCache[cacheKey];
+            return it->second;
         }
 
         auto factoryIt = m_factories.find(type);
